@@ -1,9 +1,10 @@
 import styled from "styled-components";
+
 function login() {
   return (
     <Container>
       <Content>
-        <img src="/images/white_logo_transparent_background.png"/>
+        <img src="/images/white_logo_transparent_background.png" />
         <p>
           Bem vindos a Maputo, este website desenvolvido por estudantes mostra
           locais e estabelecimento que podem tornar os seus dias melhores na
@@ -25,7 +26,7 @@ const Container = styled.div`
   display: flex;
   object-fit: contain;
   align-items: center;
-  background-color: #A69F97;
+  background-color: #a69f97;
   color: white;
 `;
 const Content = styled.div`
@@ -43,21 +44,29 @@ const Content = styled.div`
     line-height: 1.5;
     letter-spacing: 1.5px;
     font-weight: bold;
+
+    &:hover {
+      color: black;
+    }
   }
   span {
     justify-content: center;
   }
   button {
-    background-color: #f2594b;
+    background-color: red;
     height: 60px;
     width: 30vw;
     border-radius: 10px;
     border: none;
     color: white;
     font-weight: bold;
+    &:hover {
+      background-color: red;
+    }
   }
-  img{
-      width: 200px;
+
+  img {
+    width: 200px;
   }
 `;
 
