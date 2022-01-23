@@ -2,7 +2,10 @@ import styled from "styled-components";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
+import MenuIcon from "@mui/icons-material/Menu";
 import PublicIcon from "@mui/icons-material/Public";
+import Sidebar from "./Sidebar";
+
 function Header() {
   return (
     <Container>
@@ -13,22 +16,26 @@ function Header() {
         <Navbar>
           <a href="#">
             <HomeIcon className="icons" />
-            <span>Home</span>
+            <span>Pagina Principal</span>
           </a>
           <a href="#">
             <SearchIcon className="icons" />
-            <span>Search</span>
+            <span>Pesquisar</span>
           </a>
           <a href="#">
             <StackedLineChartIcon className="icons" />
-            <span>Rankings</span>
+            <span>Ranquing</span>
           </a>
           <a href="#">
             <PublicIcon className="icons" />
             <span>Publicidade</span>
           </a>
         </Navbar>
+        <Menu>
+          <MenuIcon className="icon" />
+        </Menu>
       </Content>
+      <Sidebar />
     </Container>
   );
 }
@@ -36,13 +43,17 @@ const Container = styled.div`
   color: black;
   top: 0;
   display: flex;
-  align-items: center;
   background-color: #0396a6;
   color: white;
   box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
+  @media (max-width: 768px) {
+    width: 100vw;
+    flex-direction: column;
+  }
 `;
+
 const Content = styled.div`
   display: flex;
   margin: 10px;
@@ -52,6 +63,24 @@ const Content = styled.div`
   letter-spacing: 1px;
   text-transform: uppercase;
   height: 40px;
+
+  .icon {
+    width: 40px;
+    height: 30px;
+    color: white;
+    margin-right: 10px;
+    opacity: 0;
+    &:hover {
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+    .icon {
+      opacity: 1;
+    }
+  }
 `;
 
 const Navbar = styled.nav`
@@ -60,10 +89,8 @@ const Navbar = styled.nav`
   display: flex;
   a {
     text-decoration: none;
-    padding: 10px 25px;
-    justify-content: center;
-    justify-items: center;
-    margin-right: 5px;
+    padding: 10px 10px;
+    margin-right: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -102,28 +129,49 @@ const Navbar = styled.nav`
         opacity: 1 !important;
       }
       .icons {
-        display: inherit;
-        transition: 1s ease-in-out;
+        opacity: 1;
+        /* transition: 1s cubic-bezier(0.645, 0.045, 0.355, 1); */
       }
     }
     .icons {
       width: 20px;
       color: white;
       margin-right: 10px;
-      display: none;
+      opacity: 0;
+    }
+
+    @media (max-width: 860px) {
+      padding: 5px 5px;
+      margin-right: 5px;
+      transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 
     @media (max-width: 768px) {
       display: none;
     }
+    transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 `;
+
 const LogoContainer = styled.div`
   cursor: pointer;
   font-size: 1.8em;
   font-weight: bold;
+  margin-right: 50px;
   span {
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    font-size: 1.4em;
+  }
 `;
+
+const Menu = styled.div`
+  .icon {
+    &:hover {
+      transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+`;
+
 export default Header;
