@@ -1,12 +1,15 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import MenuIcon from "@mui/icons-material/Menu";
 import PublicIcon from "@mui/icons-material/Public";
-import Sidebar from "./Sidebar";
+import SideMenu from "./SideMenu";
+import { useState } from "react";
 
 function Header() {
+  const [opened, setOpened] = useState(false);
+  const [opa, setOpa] = useState(0);
   return (
     <Container>
       <Content>
@@ -31,11 +34,19 @@ function Header() {
             <span>Publicidade</span>
           </a>
         </Navbar>
-        <Menu>
+        <Menu
+          onClick={() => {
+            if (opened == true) {
+              setOpened(false);
+            } else {
+              setOpened(true);
+            }
+          }}
+        >
           <MenuIcon className="icon" />
         </Menu>
       </Content>
-      <Sidebar />
+      {opened ? <SideMenu /> : <></>}
     </Container>
   );
 }
@@ -48,6 +59,7 @@ const Container = styled.div`
   box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
+
   @media (max-width: 768px) {
     width: 100vw;
     flex-direction: column;
@@ -157,12 +169,12 @@ const LogoContainer = styled.div`
   cursor: pointer;
   font-size: 1.8em;
   font-weight: bold;
-  margin-right: 50px;
+  margin-right: 20px;
   span {
     cursor: pointer;
   }
   @media (max-width: 768px) {
-    font-size: 1.4em;
+    font-size: 1.8em;
   }
 `;
 
@@ -173,5 +185,7 @@ const Menu = styled.div`
     }
   }
 `;
+
+const MenuComponent = styled.div``;
 
 export default Header;
