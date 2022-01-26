@@ -117,9 +117,10 @@ const Container = styled.div`
   background-color: none;
   color: white;
   align-items: center;
-
+  z-index: 1;
   justify-content: space-between;
   width: 100vw;
+  height: 60px;
   /* box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -1px 11px 14px 0px rgba(0, 0, 0, 0.31); */
