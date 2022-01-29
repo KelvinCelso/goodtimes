@@ -1,0 +1,12 @@
+name: studio 88
+type: visit
+image:
+	1-https://www.100makas.com/sites/default/files/photos/studio2.jpg
+	2-https://www.100makas.com/sites/default/files/photos/studio5.jpg
+logo:https://www.100makas.com/sites/default/files/styles/business-detail-header/public/photos/bg_studio_88.jpg?itok=qlu5lVJY
+contacto:84 479 20 36
+address:
+	1-Loja G26-28, Maputo Shopping Centre, R. Ngungunhane, Maputo
+	2-Shop S040, Matola Mall Plot No. 10/1/A
+
+
