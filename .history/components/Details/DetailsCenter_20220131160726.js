@@ -1,0 +1,24 @@
+import React from "react";
+import styled from "styled-components";
+import ItemImages from "./ItemImages";
+function DetailsCenter() {
+  return (
+    <Container>
+      <Content>
+        <ItemImages />
+      </Content>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  height: 100%;
+
+  background-color: black;
+  color: white;
+  z-index: 1;
+  top: 100px;
+`;
+const Content = styled.div``;
+
+export default DetailsCenter;

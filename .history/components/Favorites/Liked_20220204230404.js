@@ -1,0 +1,26 @@
+import React from "react";
+import styled from "styled-components";
+import Items from "./Items";
+
+function Liked() {
+  return (
+    <Container>
+      <Content>
+        <Items />
+        <Items />
+      </Content>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  display: flex;
+  margin-left: 20px;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export default Liked;
